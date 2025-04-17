@@ -1,0 +1,35 @@
+{
+  "name": "nuera_mvp",
+  "version": "1.0.0",
+  "description": "Nuera MVP Desktop Assistant",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.example.nuera",
+    "protocols": [
+      {
+        "name": "nuera",
+        "schemes": ["nuera"]
+      }
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "dotenv": "^16.5.0",
+    "node-fetch": "^2.7.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12"
+  }
+}

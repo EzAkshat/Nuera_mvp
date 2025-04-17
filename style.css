@@ -1,0 +1,173 @@
+/* login.css */
+:root {
+    --background-color: #f9f9f9;
+    --input-bg: #f1f1f1;
+    --text-color: #333;
+    --accent-color: #007bff;
+    --accent-hover: #0056b3;
+    --greeting-title: #646464;
+    --greeting-subtitle: #666;
+    --error-color: #ff0000;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --input-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --accent-color: #bb86fc;
+    --accent-hover: #3700b3;
+    --greeting-title: #bb86fc;
+    --greeting-subtitle: #b0b0b0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+}
+
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+/* Style the left and right panels */
+.left-panel, .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.left-panel {
+    position: relative; /* For positioning shapes */
+}
+
+/* Separator */
+.separator {
+    width: 2px;
+    background-color: var(--text-color);
+    opacity: 0.5;
+    height: 80%;
+    align-self: center;
+}
+
+/* Text styling on the left */
+.left-panel h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--greeting-title);
+}
+
+.left-panel p {
+    font-size: 1.2em;
+    color: var(--greeting-subtitle);
+}
+
+/* Shapes for left panel */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: float 10s infinite ease-in-out;
+}
+
+.shape1 {
+    width: 100px;
+    height: 100px;
+    background-color: var(--accent-color);
+    top: 20%;
+    left: 10%;
+}
+
+.shape2 {
+    width: 150px;
+    height: 150px;
+    background-color: var(--accent-hover);
+    top: 50%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.shape3 {
+    width: 80px;
+    height: 80px;
+    background-color: var(--greeting-title);
+    top: 70%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* General button styling */
+.right-panel button {
+    margin: 10px 0;
+    padding: 15px 50px; /* Increased width */
+    border-radius: 25px; /* Increased border radius */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sign-in button (colored) */
+#sign-in-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+}
+
+#sign-in-btn:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#create-account-btn {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+#create-account-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        flex: none;
+        height: 50%;
+        width: 100%;
+    }
+    .separator {
+        width: 80%;
+        height: 2px;
+        margin: 20px auto;
+    }
+}
